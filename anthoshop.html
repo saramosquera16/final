@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTHOSHOP - Urban Shoes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/anthoshop.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#home">
+                <span class="brand-logo">
+                    <i class="fas fa-shoe-prints"></i> ANTHOSHOP
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Comentarios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="hero-section">
+        <div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active hero-item" style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center;">
+                    <div class="hero-overlay"></div>
+                    <div class="container h-100">
+                        <div class="row align-items-center h-100">
+                            <div class="col-lg-8 text-white">
+                                <h1 class="display-4 fw-bold mb-4">STEP INTO STYLE</h1>
+                                <p class="lead mb-4">Descubre la colección de zapatos urbanos más exclusiva. Calidad premium y diseño innovador en cada par.</p>
+                                <button class="btn btn-luxury me-2">Explorar</button>
+                                <button class="btn btn-outline-luxury">Colecciones</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item hero-item" style="background-image: url('img/fondo1.jpg'); background-size: cover; background-position: center;">
+                    <div class="hero-overlay"></div>
+                    <div class="container h-100">
+                        <div class="row align-items-center h-100">
+                            <div class="col-lg-8 text-white">
+                                <h1 class="display-4 fw-bold mb-4">URBAN VIBES</h1>
+                                <p class="lead mb-4">Colecciones exclusivas inspiradas en el street style. Desde sneakers hasta botas, tenemos todo.</p>
+                                <button class="btn btn-luxury me-2">Shop Now</button>
+                                <button class="btn btn-outline-luxury">Ver Catálogo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item hero-item" style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center;">
+                    <div class="hero-overlay"></div>
+                    <div class="container h-100">
+                        <div class="row align-items-center h-100">
+                            <div class="col-lg-8 text-white">
+                                <h1 class="display-4 fw-bold mb-4">PREMIUM QUALITY</h1>
+                                <p class="lead mb-4">Cada zapato es cuidadosamente seleccionado. Comodidad, estilo y durabilidad garantizados.</p>
+                                <button class="btn btn-luxury me-2">Descubrir</button>
+                                <button class="btn btn-outline-luxury">Ofertas</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%231a1a1a'/%3E%3Ccircle cx='200' cy='200' r='150' fill='%23ffd700' opacity='0.2'/%3E%3Crect x='100' y='100' width='200' height='200' rx='20' fill='%23ffd700' opacity='0.1'/%3E%3Ctext x='200' y='180' font-size='48' text-anchor='middle' fill='%23ffd700' font-weight='bold'%3EANTHOSHOP%3C/text%3E%3Ctext x='200' y='240' font-size='20' text-anchor='middle' fill='%23ffd700' opacity='0.7'%3EUrban Shoes%3C/text%3E%3C/svg%3E" alt="About" class="img-fluid rounded-lg shadow-lg">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Quiénes Somos</h2>
+                    <p class="text-muted mb-3">En ANTHOSHOP, somos apasionados por el calzado urbano de calidad. Desde 2015, nos dedicamos a traer las mejores marcas y diseños del mundo a nuestros clientes.</p>
+                    <p class="text-muted mb-3">Creemos que cada par de zapatos cuenta una historia. Por eso seleccionamos meticulosamente cada producto, asegurando que cumpla con nuestros altos estándares de calidad y estilo.</p>
+                    <p class="text-muted mb-4">Nuestro objetivo es que encuentres el calzado perfecto que complemente tu estilo de vida urbano, desde sneakers hasta botas, pasando por zapatos casuales y formales.</p>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="feature-box">
+                                <i class="fas fa-check-circle text-gold"></i>
+                                <h5>Marcas Premium</h5>
+                                <p class="small text-muted">Las mejores marcas del mercado</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="feature-box">
+                                <i class="fas fa-shipping-fast text-gold"></i>
+                                <h5>Envío Rápido</h5>
+                                <p class="small text-muted">Entrega en 24-48 horas</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="feature-box">
+                                <i class="fas fa-undo text-gold"></i>
+                                <h5>Cambios Gratis</h5>
+                                <p class="small text-muted">Cambio sin costo en 30 días</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="feature-box">
+                                <i class="fas fa-headset text-gold"></i>
+                                <h5>Soporte 24/7</h5>
+                                <p class="small text-muted">Atención al cliente disponible</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title mb-2">Nuestros Productos</h2>
+                <p class="text-muted">Descubre nuestra colección exclusiva de zapatos urbanos</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/producto1.jpg" alt="Classic Sport Sneaker" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Classic Sport Sneaker</h5>
+                            <p class="product-description text-muted small">Sneaker clásico con diseño moderno y comodidad garantizada</p>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                                <span class="ms-2 small">(328 reviews)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$89.99</span>
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Classic Sneaker" data-price="89.99">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/producto2.jpg" alt="Urban Combat Boots" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Urban Combat Boots</h5>
+                            <p class="product-description text-muted small">Botas urbanas con style y durabilidad para el día a día</p>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <span class="ms-2 small">(412 reviews)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$129.99</span>
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Combat Boots" data-price="129.99">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/producto3.jpg" alt="High Top Lifestyle" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">High Top Lifestyle</h5>
+                            <p class="product-description text-muted small">Zapatos altos con toque casual y estilo urbano</p>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <span class="ms-2 small">(267 reviews)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$109.99</span>
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="High Tops" data-price="109.99">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/producto4.jpg" alt="Casual Loafers" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Casual Loafers</h5>
+                            <p class="product-description text-muted small">Zapatos casuales elegantes perfectos para cualquier ocasión</p>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                                <span class="ms-2 small">(189 reviews)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$74.99</span>
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Casual Loafers" data-price="74.99">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/producto5.jpg" alt="Performance Running" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Performance Running</h5>
+                            <p class="product-description text-muted small">Zapatos deportivos con máximo rendimiento y comodidad</p>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <span class="ms-2 small">(445 reviews)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$119.99</span>
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Running Shoes" data-price="119.99">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/producto6.jpg" alt="Formal Dress Shoes" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Formal Dress Shoes</h5>
+                            <p class="product-description text-muted small">Zapatos formales elegantes para ocasiones especiales</p>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <span class="ms-2 small">(214 reviews)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$139.99</span>
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Dress Shoes" data-price="139.99">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title mb-2">Lo que Dicen Nuestros Clientes</h2>
+                <p class="text-muted">Comentarios reales de clientes satisfechos</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="testimonial-text">"ANTHOSHOP tiene la mejor selección de zapatos urbanos. La calidad es excepcional y el envío fue super rápido. Definitivamente volveré a comprar."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Carlos Ramírez</h6>
+                                <small class="text-muted">Cliente verificado</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </div>
+                        <p class="testimonial-text">"Los precios son competitivos y la variedad es increíble. Encontré exactamente lo que estaba buscando. El sitio web es muy fácil de usar."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Ana Martínez</h6>
+                                <small class="text-muted">Cliente verificada</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="testimonial-text">"Excelente atención al cliente. Tuve una duda sobre una talla y respondieron inmediatamente. Los zapatos llegaron en perfectas condiciones."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Miguel López</h6>
+                                <small class="text-muted">Cliente verificado</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <h5 class="mb-4">Comparte tu experiencia</h5>
+                <form id="reviewForm" class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="reviewName" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" id="reviewEmail" placeholder="Tu correo" required>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group mb-2">
+                            <label class="form-label">Calificación</label>
+                            <div class="rating-input" id="ratingInput">
+                                <i class="fas fa-star" data-value="1"></i>
+                                <i class="fas fa-star" data-value="2"></i>
+                                <i class="fas fa-star" data-value="3"></i>
+                                <i class="fas fa-star" data-value="4"></i>
+                                <i class="fas fa-star" data-value="5"></i>
+                            </div>
+                            <input type="hidden" id="reviewRating" value="0">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <textarea class="form-control" id="reviewComment" placeholder="Tu comentario..." rows="4" required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-luxury">Enviar Comentario</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title mb-2">Ponte en Contacto</h2>
+                <p class="text-muted">¿Tienes preguntas? Nos encantaría saber de ti</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Teléfono</h5>
+                        <p><a href="tel:+34912345678">+34 91 234 5678</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email</h5>
+                        <p><a href="mailto:info@anthoshop.com">info@anthoshop.com</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Dirección</h5>
+                        <p>Madrid, España</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contactForm" class="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="contactName" placeholder="Nombre completo" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" id="contactEmail" placeholder="Tu correo electrónico" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="contactSubject" placeholder="Asunto" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" id="contactMessage" placeholder="Tu mensaje..." rows="5" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-luxury w-100">Enviar Mensaje</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h5>Mi Carrito</h5>
+            <button class="btn-close" id="closeCart"></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="text-center text-muted py-5">Tu carrito está vacío</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-luxury w-100 mb-2">Proceder al Pago</button>
+            <button class="btn btn-outline-luxury w-100" id="clearCart">Vaciar Carrito</button>
+        </div>
+    </div>
+    <button class="btn-cart-toggle" id="cartToggle">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white mb-3">
+                        <i class="fas fa-shoe-prints"></i> ANTHOSHOP
+                    </h5>
+                    <p class="text-muted small">Los mejores zapatos urbanos con estilo y calidad. Tu tienda de confianza para calzado premium.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-white mb-3">Enlaces Rápidos</h6>
+                    <ul class="footer-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Quiénes Somos</a></li>
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-white mb-3">Newsletter</h6>
+                    <p class="text-muted small mb-2">Suscríbete para recibir ofertas exclusivas</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Tu correo..." required>
+                            <button class="btn btn-luxury" type="submit">Suscribir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="bg-light opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted small mb-0">&copy; 2024 ANTHOSHOP. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted small mb-0">
+                        <a href="#" class="text-decoration-none text-muted">Privacidad</a> | 
+                        <a href="#" class="text-decoration-none text-muted">Términos</a> | 
+                        <a href="#" class="text-decoration-none text-muted">Cookies</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/anthoshop.js"></script>
+</body>
+</html>
