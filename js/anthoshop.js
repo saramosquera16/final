@@ -107,161 +107,6 @@ class StorageManager {
     }
 }
 
-// ============ CART FUNCTIONALITY ============
-class CartManager {
-    constructor() {
-        this.cartToggle = document.getElementById('cartToggle');
-        this.cartSidebar = document.getElementById('cartSidebar');
-        this.closeCart = document.getElementById('closeCart');
-        this.cartItems = document.getElementById('cartItems');
-        this.cartTotal = document.getElementById('cartTotal');
-        this.cartCount = document.getElementById('cartCount');
-        this.clearCartBtn = document.getElementById('clearCart');
-        this.addToCartButtons = document.querySelectorAll('.add-to-cart');
-
-        this.init();
-    }
-
-    init() {
-        this.attachEventListeners();
-        this.renderCart();
-    }
-
-    attachEventListeners() {
-        this.cartToggle.addEventListener('click', () => this.toggleCart());
-        this.closeCart.addEventListener('click', () => this.toggleCart());
-        this.clearCartBtn.addEventListener('click', () => this.clearCart());
-
-        this.addToCartButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const product = {
-                    name: e.currentTarget.dataset.product,
-                    price: parseFloat(e.currentTarget.dataset.price)
-                };
-                this.addToCart(product);
-            });
-        });
-
-        // Cerrar carrito al hacer clic fuera
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.cart-sidebar') && 
-                !e.target.closest('.btn-cart-toggle') && 
-                this.cartSidebar.classList.contains('active')) {
-                this.toggleCart();
-            }
-        });
-    }
-
-    toggleCart() {
-        this.cartSidebar.classList.toggle('active');
-    }
-
-    addToCart(product) {
-        StorageManager.addToCart(product);
-        this.renderCart();
-        this.showNotification(`✓ ${product.name} agregado al carrito`);
-        
-        // Animar el botón del carrito
-        this.cartToggle.style.animation = 'none';
-        setTimeout(() => {
-            this.cartToggle.style.animation = 'bounce 0.6s';
-        }, 10);
-    }
-
-    renderCart() {
-        const cart = StorageManager.getCart();
-        
-        if (cart.length === 0) {
-            this.cartItems.innerHTML = '<p class="text-center text-muted py-5">Tu carrito está vacío</p>';
-            this.cartCount.textContent = '0';
-            this.cartTotal.textContent = '$0.00';
-            return;
-        }
-
-        let total = 0;
-        this.cartItems.innerHTML = '';
-
-        cart.forEach(item => {
-            total += item.price * item.quantity;
-
-            const itemHTML = `
-                <div class="cart-item">
-                    <div class="cart-item-info">
-                        <h6>${item.name}</h6>
-                        <p>$${item.price.toFixed(2)}</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <input type="number" min="1" value="${item.quantity}" 
-                               class="quantity-input" data-id="${item.id}" 
-                               style="width: 50px; padding: 5px; border: 1px solid #ddd; border-radius: 5px;">
-                        <button class="cart-item-remove" data-id="${item.id}">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                </div>
-            `;
-
-            this.cartItems.innerHTML += itemHTML;
-        });
-
-        // Agregar event listeners a botones de eliminar
-        document.querySelectorAll('.cart-item-remove').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const id = parseInt(e.currentTarget.dataset.id);
-                StorageManager.removeFromCart(id);
-                this.renderCart();
-            });
-        });
-
-        // Agregar event listeners a inputs de cantidad
-        document.querySelectorAll('.quantity-input').forEach(input => {
-            input.addEventListener('change', (e) => {
-                const id = parseInt(e.target.dataset.id);
-                const quantity = parseInt(e.target.value);
-                StorageManager.updateQuantity(id, quantity);
-                this.renderCart();
-            });
-        });
-
-        this.cartCount.textContent = cart.length;
-        this.cartTotal.textContent = `$${total.toFixed(2)}`;
-    }
-
-    clearCart() {
-        if (confirm('¿Estás seguro de que deseas vaciar tu carrito?')) {
-            StorageManager.clearCart();
-            this.renderCart();
-            this.showNotification('✓ Carrito vaciado');
-        }
-    }
-
-    showNotification(message) {
-        const notification = document.createElement('div');
-        notification.className = 'notification';
-        notification.textContent = message;
-        notification.style.cssText = `
-            position: fixed;
-            top: 25px;
-            right: 25px;
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-            color: #1a1a1a;
-            padding: 16px 28px;
-            border-radius: 50px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-            z-index: 1001;
-            font-weight: 700;
-            animation: slideInRight 0.4s ease-out;
-            letter-spacing: 0.5px;
-        `;
-
-        document.body.appendChild(notification);
-        setTimeout(() => {
-            notification.style.animation = 'slideOutRight 0.4s ease-out';
-            setTimeout(() => notification.remove(), 400);
-        }, 3500);
-    }
-}
-
 // ============ REVIEWS FUNCTIONALITY ============
 class ReviewManager {
     constructor() {
@@ -429,10 +274,9 @@ document.querySelectorAll('.product-card, .testimonial-card, .contact-info, .fea
 });
 
 // ============ INITIALIZE APP ============
-let cartManager, reviewManager, contactManager, newsletterManager;
+let reviewManager, contactManager, newsletterManager;
 
 document.addEventListener('DOMContentLoaded', () => {
-    cartManager = new CartManager();
     reviewManager = new ReviewManager();
     contactManager = new ContactManager();
     newsletterManager = new NewsletterManager();
@@ -478,3 +322,96 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ============ CUSTOM SLIDER ============
+class CustomSlider {
+    constructor() {
+        this.slider = document.getElementById('heroSlider');
+        this.slides = document.querySelectorAll('.slide');
+        this.dots = document.querySelectorAll('.dot');
+        this.prevBtn = document.getElementById('prevSlide');
+        this.nextBtn = document.getElementById('nextSlide');
+        this.currentSlide = 0;
+        this.autoPlayInterval = null;
+        this.autoPlayDelay = 5000; // 5 segundos
+
+        this.init();
+    }
+
+    init() {
+        this.attachEventListeners();
+        this.startAutoPlay();
+    }
+
+    attachEventListeners() {
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+
+        // Pausar autoplay cuando el usuario interactúe
+        document.addEventListener('mouseenter', () => {
+            if (this.slider.contains(event.target) || this.slider === event.target) {
+                this.stopAutoPlay();
+            }
+        });
+
+        document.addEventListener('mouseleave', () => {
+            this.startAutoPlay();
+        });
+    }
+
+    showSlide(index) {
+        // Remover clase active de todos los slides y dots
+        this.slides.forEach(slide => slide.classList.remove('active'));
+        this.dots.forEach(dot => dot.classList.remove('active'));
+
+        // Agregar clase active al slide y dot actual
+        this.slides[index].classList.add('active');
+        this.dots[index].classList.add('active');
+
+        this.currentSlide = index;
+    }
+
+    nextSlide() {
+        let index = (this.currentSlide + 1) % this.slides.length;
+        this.showSlide(index);
+        this.resetAutoPlay();
+    }
+
+    prevSlide() {
+        let index = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+        this.showSlide(index);
+        this.resetAutoPlay();
+    }
+
+    goToSlide(index) {
+        this.showSlide(index);
+        this.resetAutoPlay();
+    }
+
+    startAutoPlay() {
+        this.autoPlayInterval = setInterval(() => {
+            this.nextSlide();
+        }, this.autoPlayDelay);
+    }
+
+    stopAutoPlay() {
+        clearInterval(this.autoPlayInterval);
+    }
+
+    resetAutoPlay() {
+        this.stopAutoPlay();
+        this.startAutoPlay();
+    }
+}
+
+// Inicializar slider cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    // El slider se inicializa aquí pero después de que CartManager se cree
+    if (document.getElementById('heroSlider')) {
+        new CustomSlider();
+    }
+});

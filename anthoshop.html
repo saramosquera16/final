@@ -32,63 +32,59 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Carousel -->
+    <!-- Hero Section with Custom Slider -->
     <section id="home" class="hero-section">
-        <div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active hero-item" style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center;">
+        <div class="custom-slider" id="heroSlider">
+            <div class="slider-container">
+                <div class="slide active" style="background-image: url('img/fondo.jpg');">
                     <div class="hero-overlay"></div>
-                    <div class="container h-100">
-                        <div class="row align-items-center h-100">
-                            <div class="col-lg-8 text-white">
-                                <h1 class="display-4 fw-bold mb-4">STEP INTO STYLE</h1>
-                                <p class="lead mb-4">Descubre la colección de zapatos urbanos más exclusiva. Calidad premium y diseño innovador en cada par.</p>
-                                <button class="btn btn-luxury me-2">Explorar</button>
-                                <button class="btn btn-outline-luxury">Colecciones</button>
-                            </div>
+                    <div class="slide-content">
+                        <h1>STEP INTO STYLE</h1>
+                        <p>Descubre la colección de zapatos urbanos más exclusiva. Calidad premium y diseño innovador en cada par.</p>
+                        <div class="button-group">
+                            <button class="btn btn-luxury">Explorar</button>
+                            <button class="btn btn-outline-luxury">Colecciones</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="carousel-item hero-item" style="background-image: url('img/fondo1.jpg'); background-size: cover; background-position: center;">
+                <div class="slide" style="background-image: url('img/fondo1.jpg');">
                     <div class="hero-overlay"></div>
-                    <div class="container h-100">
-                        <div class="row align-items-center h-100">
-                            <div class="col-lg-8 text-white">
-                                <h1 class="display-4 fw-bold mb-4">URBAN VIBES</h1>
-                                <p class="lead mb-4">Colecciones exclusivas inspiradas en el street style. Desde sneakers hasta botas, tenemos todo.</p>
-                                <button class="btn btn-luxury me-2">Shop Now</button>
-                                <button class="btn btn-outline-luxury">Ver Catálogo</button>
-                            </div>
+                    <div class="slide-content">
+                        <h1>URBAN VIBES</h1>
+                        <p>Colecciones exclusivas inspiradas en el street style. Desde sneakers hasta botas, tenemos todo.</p>
+                        <div class="button-group">
+                            <button class="btn btn-luxury">Shop Now</button>
+                            <button class="btn btn-outline-luxury">Ver Catálogo</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="carousel-item hero-item" style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center;">
+                <div class="slide" style="background-image: url('img/fondo.jpg');">
                     <div class="hero-overlay"></div>
-                    <div class="container h-100">
-                        <div class="row align-items-center h-100">
-                            <div class="col-lg-8 text-white">
-                                <h1 class="display-4 fw-bold mb-4">PREMIUM QUALITY</h1>
-                                <p class="lead mb-4">Cada zapato es cuidadosamente seleccionado. Comodidad, estilo y durabilidad garantizados.</p>
-                                <button class="btn btn-luxury me-2">Descubrir</button>
-                                <button class="btn btn-outline-luxury">Ofertas</button>
-                            </div>
+                    <div class="slide-content">
+                        <h1>PREMIUM QUALITY</h1>
+                        <p>Cada zapato es cuidadosamente seleccionado. Comodidad, estilo y durabilidad garantizados.</p>
+                        <div class="button-group">
+                            <button class="btn btn-luxury">Descubrir</button>
+                            <button class="btn btn-outline-luxury">Ofertas</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
+
+            <button class="slider-btn prev" id="prevSlide">
+                <i class="fas fa-chevron-left"></i>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
+            <button class="slider-btn next" id="nextSlide">
+                <i class="fas fa-chevron-right"></i>
             </button>
+
+            <div class="slider-dots">
+                <button class="dot active" data-slide="0"></button>
+                <button class="dot" data-slide="1"></button>
+                <button class="dot" data-slide="2"></button>
+            </div>
         </div>
     </section>
 
@@ -148,7 +144,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location.href='producto.html?id=1'" style="cursor: pointer;">
                         <div class="product-image">
                             <img src="img/producto1.jpg" alt="Classic Sport Sneaker" class="product-img">
                         </div>
@@ -165,7 +161,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="product-price">$89.99</span>
-                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Classic Sneaker" data-price="89.99">
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Classic Sneaker" data-price="89.99" onclick="event.stopPropagation();">
                                     <i class="fas fa-shopping-cart"></i>
                                 </button>
                             </div>
@@ -174,7 +170,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location.href='producto.html?id=2'" style="cursor: pointer;">
                         <div class="product-image">
                             <img src="img/producto2.jpg" alt="Urban Combat Boots" class="product-img">
                         </div>
@@ -191,7 +187,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="product-price">$129.99</span>
-                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Combat Boots" data-price="129.99">
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Combat Boots" data-price="129.99" onclick="event.stopPropagation();">
                                     <i class="fas fa-shopping-cart"></i>
                                 </button>
                             </div>
@@ -200,7 +196,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location.href='producto.html?id=3'" style="cursor: pointer;">
                         <div class="product-image">
                             <img src="img/producto3.jpg" alt="High Top Lifestyle" class="product-img">
                         </div>
@@ -216,7 +212,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="product-price">$109.99</span>
-                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="High Tops" data-price="109.99">
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="High Tops" data-price="109.99" onclick="event.stopPropagation();">
                                     <i class="fas fa-shopping-cart"></i>
                                 </button>
                             </div>
@@ -225,7 +221,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location.href='producto.html?id=4'" style="cursor: pointer;">
                         <div class="product-image">
                             <img src="img/producto4.jpg" alt="Casual Loafers" class="product-img">
                         </div>
@@ -242,7 +238,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="product-price">$74.99</span>
-                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Casual Loafers" data-price="74.99">
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Casual Loafers" data-price="74.99" onclick="event.stopPropagation();">
                                     <i class="fas fa-shopping-cart"></i>
                                 </button>
                             </div>
@@ -251,7 +247,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location.href='producto.html?id=5'" style="cursor: pointer;">
                         <div class="product-image">
                             <img src="img/producto5.jpg" alt="Performance Running" class="product-img">
                         </div>
@@ -268,7 +264,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="product-price">$119.99</span>
-                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Running Shoes" data-price="119.99">
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Running Shoes" data-price="119.99" onclick="event.stopPropagation();">
                                     <i class="fas fa-shopping-cart"></i>
                                 </button>
                             </div>
@@ -277,7 +273,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="product-card">
+                    <div class="product-card" onclick="window.location.href='producto.html?id=6'" style="cursor: pointer;">
                         <div class="product-image">
                             <img src="img/producto6.jpg" alt="Formal Dress Shoes" class="product-img">
                         </div>
@@ -293,7 +289,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="product-price">$139.99</span>
-                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Dress Shoes" data-price="139.99">
+                                <button class="btn btn-sm btn-luxury add-to-cart" data-product="Dress Shoes" data-price="139.99" onclick="event.stopPropagation();">
                                     <i class="fas fa-shopping-cart"></i>
                                 </button>
                             </div>

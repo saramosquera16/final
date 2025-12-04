@@ -1,0 +1,229 @@
+/* ============ CHECKOUT PAGE ============ */
+.checkout-section {
+    background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+    min-height: 100vh;
+}
+
+.checkout-form {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-form h2 {
+    color: var(--primary-black);
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.form-section {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--gold);
+}
+
+.form-section h5 {
+    color: var(--primary-black);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.form-label {
+    color: var(--primary-black);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+}
+
+.form-check {
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    border: 2px solid #ddd;
+    width: 1.25em;
+    height: 1.25em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-check-input:checked {
+    background-color: var(--gold);
+    border-color: var(--gold);
+}
+
+.form-check-label {
+    cursor: pointer;
+    margin-left: 0.5rem;
+    color: #333;
+}
+
+.order-summary {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 100px;
+}
+
+.order-summary h4 {
+    color: var(--primary-black);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.order-items {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-item-info {
+    flex: 1;
+}
+
+.order-item-name {
+    font-weight: 600;
+    color: var(--primary-black);
+    font-size: 0.95rem;
+}
+
+.order-item-details {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 0.3rem;
+}
+
+.order-item-price {
+    color: var(--gold);
+    font-weight: 700;
+    text-align: right;
+    min-width: 80px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.summary-row.total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-black);
+}
+
+.summary-row span:last-child {
+    font-weight: 600;
+}
+
+.promo-section {
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+.promo-section .form-label {
+    margin-bottom: 0.8rem;
+}
+
+.input-group .btn {
+    border: 2px solid #ddd;
+    color: var(--primary-black);
+    transition: all 0.3s ease;
+}
+
+.input-group .btn:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--primary-black);
+}
+
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+}
+
+.alert.d-none {
+    display: none !important;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    .checkout-form {
+        padding: 25px;
+    }
+
+    .checkout-form h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .order-summary {
+        margin-top: 2rem;
+        position: static;
+    }
+
+    .form-section {
+        padding: 15px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .checkout-form {
+        padding: 15px;
+    }
+
+    .checkout-form h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-section {
+        padding: 12px;
+        margin-bottom: 1rem;
+    }
+
+    .order-summary {
+        padding: 20px;
+    }
+
+    .order-summary h4 {
+        font-size: 1.1rem;
+    }
+
+    .order-item {
+        padding: 10px 0;
+    }
+}
