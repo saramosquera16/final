@@ -38,7 +38,7 @@ const PRODUCTS_DB = {
         ],
         sizes: ["36", "37", "38", "39", "40", "41", "42"],
         image: "img/producto2.jpg",
-        images: ["img/producto1/captura1producto1.webp", "img/producto1/captura2producto1.webp", "img/producto1/captura3producto1.webp", "img/producto1/captura4producto1.webp"]
+        images: ["img/producto2/captura1producto2.avif", "img/producto2/captura2producto2.avif", "img/producto2/captura3producto2.avif", "img/producto2/captura4producto2.avif"]
     },
     3: {
         id: 3,
@@ -58,7 +58,7 @@ const PRODUCTS_DB = {
         ],
         sizes: ["36", "37", "38", "39", "40", "41", "42"],
         image: "img/producto3.jpg",
-        images: ["img/producto1/captura1producto1.webp", "img/producto1/captura2producto1.webp", "img/producto1/captura3producto1.webp", "img/producto1/captura4producto1.webp"]
+        images: ["img/producto3/captura1producto3.avif", "img/producto3/captura2producto3.avif", "img/producto3/captura3producto3.avif", "img/producto3/captura4producto3.avif"]
     },
     4: {
         id: 4,
@@ -77,8 +77,8 @@ const PRODUCTS_DB = {
             "Fácil mantenimiento"
         ],
         sizes: ["36", "37", "38", "39", "40", "41", "42"],
-        image: "img/producto4.jpg",
-        images: ["img/producto1/captura1producto1.webp", "img/producto1/captura2producto1.webp", "img/producto1/captura3producto1.webp", "img/producto1/captura4producto1.webp"]
+        image: "img/producto4.4.png",
+        images: ["img/producto4/captura1producto4.webp", "img/producto4/captura2producto4.webp", "img/producto4/captura3producto4.webp", "img/producto4/captura4producto4.webp"]
     },
     5: {
         id: 5,
@@ -98,7 +98,7 @@ const PRODUCTS_DB = {
         ],
         sizes: ["36", "37", "38", "39", "40", "41", "42"],
         image: "img/producto5.jpg",
-        images: ["img/producto1/captura1producto1.webp", "img/producto1/captura2producto1.webp", "img/producto1/captura3producto1.webp", "img/producto1/captura4producto1.webp"]
+        images: ["img/producto5/captura1producto5.webp", "img/producto5/captura2producto5.webp", "img/producto5/captura3producto5.webp", "img/producto5/captura4producto5.webp"]
     },
     6: {
         id: 6,
@@ -118,7 +118,7 @@ const PRODUCTS_DB = {
         ],
         sizes: ["36", "37", "38", "39", "40", "41", "42"],
         image: "img/producto6.jpg",
-        images: ["img/producto1/captura1producto1.webp", "img/producto1/captura2producto1.webp", "img/producto1/captura3producto1.webp", "img/producto1/captura4producto1.webp"]
+        images: ["img/producto6/captura1producto6.jpg", "img/producto6/captura2producto6.jpg", "img/producto6/captura3producto6.jpg", "img/producto6/captura4producto6.jpg"]
     }
 };
 
